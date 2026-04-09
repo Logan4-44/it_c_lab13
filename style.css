@@ -1,0 +1,208 @@
+/* ==============================
+   CSS Variables
+============================== */
+:root {
+  --bg: #1a1a1a;
+  --card-bg: #242424;
+  --accent: #e8c547;
+  --accent2: #e05a3a;
+  --text: #e8e4dc;
+  --muted: #888;
+  --heading-font: 'Permanent Marker', cursive;
+  --body-font: 'Nunito', sans-serif;
+  --radius: 12px;
+}
+
+/* ==============================
+   Reset & Base
+============================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--body-font);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Subtle grain overlay for texture */
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+/* ==============================
+   Header
+============================== */
+header {
+  background: linear-gradient(135deg, #111 0%, #2a2a2a 100%);
+  text-align: center;
+  padding: 60px 20px 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 4px solid var(--accent);
+}
+
+.header-inner {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 50px;
+}
+
+.greeting {
+  font-size: 1rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+  font-weight: 600;
+  animation: fadeDown 0.6s ease both;
+}
+
+header h1 {
+  font-family: var(--heading-font);
+  font-size: clamp(3rem, 10vw, 6rem);
+  color: var(--accent);
+  text-shadow: 4px 4px 0 var(--accent2), 8px 8px 0 rgba(0,0,0,0.3);
+  line-height: 1;
+  animation: fadeDown 0.6s 0.1s ease both;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-top: 12px;
+  letter-spacing: 0.03em;
+  animation: fadeDown 0.6s 0.2s ease both;
+}
+
+/* Squiggle SVG divider */
+.squiggle {
+  width: 100%;
+  height: 40px;
+  background: var(--bg);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+/* ==============================
+   Main Layout
+============================== */
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==============================
+   Cards
+============================== */
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  margin-bottom: 24px;
+  border-left: 5px solid var(--accent);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: fadeUp 0.5s ease both;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+}
+
+.card:nth-child(even) {
+  border-left-color: var(--accent2);
+}
+
+.card h2 {
+  font-family: var(--heading-font);
+  font-size: 1.7rem;
+  color: var(--accent);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card:nth-child(even) h2 {
+  color: var(--accent2);
+}
+
+.emoji {
+  font-style: normal;
+  font-size: 1.4rem;
+}
+
+.card p {
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+/* ==============================
+   Footer
+============================== */
+footer {
+  text-align: center;
+  padding: 30px 20px 40px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==============================
+   Animations
+============================== */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+
+/* ==============================
+   Responsive
+============================== */
+@media (max-width: 500px) {
+  .card {
+    padding: 20px 18px;
+  }
+}

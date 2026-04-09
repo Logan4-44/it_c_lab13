@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Logan | About Me</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="noise"></div>
+
+    <header>
+      <div class="header-inner">
+        <p class="greeting">
+          <script>
+            const hour = new Date().getHours();
+            if (hour < 12) document.write("☀️ Good morning!");
+            else if (hour < 18) document.write("👋 Good afternoon!");
+            else document.write("🌙 Good evening!");
+          </script>
+        </p>
+        <h1>Logan</h1>
+        <p class="subtitle">Information Systems student. Music lover. Gym rat.</p>
+      </div>
+      <div class="squiggle"></div>
+    </header>
+
+    <main>
+
+      <section class="card" id="about">
+        <h2><span class="emoji">🙋</span> About Me</h2>
+        <p>
+          Hey, I'm <strong>Logan</strong> — a student, music enthusiast, and someone who takes both lifting and friendship pretty seriously.
+          I'm currently studying at BYU figuring out how technology and business fit together, and honestly loving the ride.
+        </p>
+      </section>
+
+      <section class="card" id="education">
+        <h2><span class="emoji">🎓</span> Education</h2>
+        <p>
+          I'm studying <strong>Information Systems</strong> at <em>Brigham Young University (BYU)</em> in Provo, Utah.
+          Information Systems sits right at the crossroads of technology and business — I get to learn how organizations
+          use tech to solve real problems, which I find way more interesting than pure coding or pure business on its own.
+        </p>
+        <p>
+          The program covers everything from database design and networking to project management and cybersecurity basics,
+          which keeps things fresh and always gives me something new to dig into.
+        </p>
+      </section>
+
+      <section class="card" id="interests">
+        <h2><span class="emoji">🎸</span> Interests</h2>
+        <p>
+          Music is a big part of my life — specifically <strong>90s rock and grunge</strong>. There's something about that raw,
+          unfiltered sound that just hits different. Bands like Nirvana, Pearl Jam, Soundgarden, and Alice in Chains are
+          basically a permanent fixture in my rotation. It's the kind of music that doesn't try too hard and doesn't
+          apologize for anything — which I can respect.
+        </p>
+        <p>
+          Beyond just listening, I love learning about the stories and history behind the music. The Seattle scene of the
+          early 90s is genuinely one of the most fascinating cultural moments in modern music history, and I could talk
+          about it for way too long.
+        </p>
+      </section>
+
+      <section class="card" id="hobbies">
+        <h2><span class="emoji">💪</span> Hobbies</h2>
+        <p>
+          The gym is part of my daily routine — not just for the physical side, but because it's one of the best ways I
+          know to clear my head and stay consistent. There's something satisfying about showing up every single day and
+          putting in the work, even when you don't feel like it.
+        </p>
+        <p>
+          Outside of that, I spend a lot of time with my friends. Whether it's hanging out, grabbing food, or just vibing —
+          good company is hard to beat. Some of my favorite memories are just low-key hangouts that turned into something
+          unexpectedly great.
+        </p>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>Made by Logan &bull; Last updated: <script>document.write(new Date().toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'}))</script></p>
+    </footer>
+
+  </body>
+</html>
